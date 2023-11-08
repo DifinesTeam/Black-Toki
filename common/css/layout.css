@@ -1,0 +1,253 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap');
+
+/*  Layout
+-----------------------------------------------------------------------------*/
+/* Body */
+html{font-size:62.5%;}
+body.customize-support{margin-top:-32px !important;}
+body {
+background:#000;
+color:#fff; /*コンテンツの主となる文字色*/
+font-size: 2.0rem; /*コンテンツの主となる文字サイズ*/
+line-height: 2.0; /*コンテンツの主となる文字高さ*/
+margin: 0;
+letter-spacing: 2px;
+font-family: 'Inter', 'Open Sans', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic","メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+font-weight: 600;
+ /*コンテンツの主となるフォント 前の方が優先して使用されるため、必要に応じて前後を入れ替える*/
+width:100%; height:100%;
+/*文字の自動カーニング設定*/
+font-feature-settings: "palt" 1;
+}
+
+/*  link*/
+a {color:#333; text-decoration: none;  }
+a:visited { color:#333; text-decoration: none;  }
+a:hover { color: #333; text-decoration:underline; }
+a img { border: 0; }
+a.link,
+a.link:visited,
+a.link:hover { color: #2F5883; text-decoration:underline; }
+
+.gothic { font-family:'Inter', "游ゴシック Medium", "Yu Gothic Medium", "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;}
+.mincho{ font-family:"游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "Times New Roman", "ＭＳ Ｐ明朝", "MS PMincho", serif !important; -ms-font-family: "ＭＳ Ｐ明朝", "MS PMincho";-ms-font-feature-settings:"pkna";}
+img{max-width:100%;height:auto;}
+
+/*コンテンツ幅*/
+.cont{width: 1310px; max-width: 1310px; margin-left: auto; margin-right: auto;}
+.cont.cont_max{width:1300px; max-width: 1300px; margin-left: auto; margin-right: auto; position:relative;box-sizing: border-box;}
+.cont.cont_min{width:900px; max-width: 900px; margin-left: auto; margin-right: auto; position:relative;box-sizing: border-box;}
+.cont_box{margin-left: 3%; margin-right: 3%;}
+.cont_flex{display: flex; justify-content: space-between;}
+.cont_flex.flex_center{justify-content: center;}
+.cont__main{width:750px; align-self: stretch;}/*メインコンテンツ*/
+.cont__aside{width:200px; align-self: stretch;}/*サイドバーコンテンツ*/
+/*コンテンツ幅ここまで*/
+
+/*アンカーリンクの上調整*/
+a.anchor{display: block;height:100px; margin-top:-100px;}
+
+/*ブロックごとのデフォルトのパディング*/
+.box{padding: 80px 0 100px;}
+
+/*画像がはみ出た場合の調整*/
+img{max-width: 100%; height: auto;}
+/*ブラウザ全面を使って表示*/
+.full_vis {height: 100vh; width: 100vw; position: relative;}
+
+@media only screen and (max-width :1551px) {
+    body {font-size: 1.6rem;}
+}
+@media only screen and (max-width :1311px) {
+  .cont.cont_max,
+  .cont.cont_min,
+  .cont{width: auto; max-width:inherit; margin-left: 3%; margin-right: 3%;}
+}
+@media only screen and (max-width :1025px) {
+  html{font-size:50%;}
+  body{letter-spacing:0; line-height: 1.6;width:100%;overflow-x:hidden;}
+  img{max-width:100%;width:auto;height:auto;}
+  .sp-cont{padding:0 15px;}
+  .cont_flex{display: block; }
+  .cont__main,
+  .cont__aside{width:auto;}
+  .box{padding: 40px 0 40px;margin-left: 3%; margin-right: 3%; margin-bottom: 40px;}
+}
+@media only screen and (max-width :415px) {
+  .box{padding: 20px 0 20px; margin-bottom: 20px;}
+  .cont{width: auto; max-width:inherit; margin-left:3%; margin-right: 3%;}
+  .box .cont{margin-left: 0; margin-right: 0;}
+}
+
+/* テーマ内で使いまわすクラス
+-----------------------------------------------*/
+/* タイトル類 */
+.top_tit {text-align: center; margin-bottom: 40px; font-weight: bold;}
+.top_tit span{display: block;}
+.top_tit .top_tit_en{ font-size: 5.0rem;}
+
+.block_tit{font-size: 3.0rem; font-weight: bold; margin-bottom: 30px; line-height: 1.6;}
+.sec_tit{ font-size: 2.5rem; font-weight: bold; margin-bottom: 20px; padding-bottom: 15px; line-height: 1.6; border-bottom: 1px solid #ccc;}
+.sub_tit{ font-size: 2.0rem; font-weight: bold; margin-bottom: 20px; border-left: 5px solid #ccc; padding: 3px 0 3px 15px;}
+.sm_tit{ font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;}
+
+/* ライン関連 */
+.under_line { background: linear-gradient(transparent 70%, #FFFF00 70%);}
+
+/* wrapper
+-----------------------------------------------*/
+#wrapper{min-width:1310px;}
+#main{padding: 0px 0;}
+@media only screen and (max-width :1311px) {
+#wrapper{min-width:inherit;}
+}
+@media only screen and (max-width :1025px) {
+	#wrapper{min-width:0;overflow-x:hidden;}
+	#main{padding: 0px 0;}
+}
+
+/* header
+-----------------------------------------------*/
+#header{width:100%; box-sizing: border-box; padding: 15px 3%; position: fixed; display: flex;justify-content: space-between; align-items: center; z-index: 11;}
+#header #logo {width: 150px;}
+#header #logo img{ vertical-align: middle;}
+#header .sp_navi-btn{display: none;}
+#header .navi ul{text-align: right;padding:10px 20px;}
+#header .navi li{display:inline-block;margin-left:20px; }
+#header .navi li a{font-weight: bold;letter-spacing: 2px; color: #fff;}
+/*@keyframes header_slide {
+  0% {top: -150px; opacity: 0;}
+  100% {top: 15; opacity: 1;}
+}*/
+.upper #header{ position: fixed; z-index: 10; padding:5px 3%; /*animation-name: header_slide; animation-timing-function: ease-in-out; animation-duration: .5s;*/ background-color: rgba(0,0,0,0.78); transition: 0.5s;}
+
+
+
+@media only screen and (max-width :769px) {
+  #header{}
+  #header .sp_navi-btn{display: block; cursor: pointer; float:right; margin:11px 0vw; width:34px; height: 26px;position: relative; z-index: 11;}
+  #header .sp_navi-btn span{position: absolute;background:#ccc; width:100%; height:4px; display: block;}
+  #header .sp_navi-btn span:nth-child(1){top:0px; left:0px; }
+  #header .sp_navi-btn span:nth-child(2){top:50%; margin-top:-2px; left:0px; }
+  #header .sp_navi-btn span:nth-child(3){bottom:0px; left:0px; }
+  #header .navi{display: none;background:rgba(255,255,255,0.95); position:fixed;top:64px; left:0px;width:100%;}
+  #header .navi li{display:block;margin:0 auto 10px; width:90vw; text-align: left;}
+  #header .navi li:last-child{border-bottom: none;}
+  #header .navi li a{display: block; position: relative; padding: 4px 0;}
+  
+  /* ナビモーダル */
+    #header .navi{position: fixed;z-index: 10;top: -1px;left: 0;width: 0%;height: 101vh;justify-content: center;align-items: center;overflow: hidden;background-color: rgb(0 0 0 / 90%); color: #fff;transition: width 0.3s cubic-bezier(.4, 0, .2, 1) 0.2s; display: flex;}
+    #header .navi li{display: block;}
+    #header .navi_list{opacity: 0; transition: opacity 0.5s 0s;text-align: left; display: table; margin: 0 auto;}
+    #header .navi ul.navi_list li{display: block; margin-left: 0; margin-bottom: 20px;}
+    #header .navi ul.navi_list li a{ font-size: 4.0rem; line-height: 1.8; letter-spacing: 2px; border: none; text-align: left; color: #fff;}
+    #header .navi ul.navi_list li a::before{display: none;}
+    #header .navi ul.navi_list ul{position: static; width: auto; text-align: left; padding: 10px 25px 0px 25px;}
+    #header .navi ul.navi_list ul li{height: auto; opacity: 1;}
+    #header .navi ul.navi_list ul li a{background: none; padding: 0; font-size: 2.5rem; font-weight: bold;}
+
+    .navi_active #header .navi {width: 100%; display: flex;}
+    .navi_active #header .navi_box{width: 100% !important;transition: width 0.1s cubic-bezier(.4, 0, .2, 1) 0s; display: flex; z-index: 2;}
+    .navi_active #header .navi_list{opacity: 1; transition: opacity 0.5s 0.5s;}
+    .navi_active .header_navi{position:fixed; top: 65px; left: 0; width: 100%; display: block!important;}
+ 
+    
+  .navi_active .header_navi{position:fixed; top: 65px; left: 0; width: 100%; display: block!important;}
+}
+@media only screen and (max-width :480px) {
+    #header #logo {width: 120px;}
+}
+
+/* footer
+-----------------------------------------------*/
+#footer{border-top: 1px solid #666; padding-top: 35px; padding-bottom: 35px;}
+#footer .footer_logo{width: 180px;}
+#footer .footer_logo img{vertical-align: middle;}
+#footer .cont{ justify-content: flex-start; align-items: center;}
+#footer .cont > *{margin-right: 20px; font-size: 1.4rem;}
+#footer_pagetop { position: fixed; bottom: 25px; right: 25px; z-index: 10;}
+@media only screen and (max-width :769px) {
+#footer_pagetop { bottom:5px; right: 5px; width: 35px; height: 35px;} 
+}
+@media only screen and (max-width :480px) {
+    #footer .cont > *{margin: 0 auto 10px auto; text-align: center;}
+}
+
+/* contents
+-----------------------------------------------*/
+#main-vis{background: url("../../images/main_bg.jpg") bottom center no-repeat; background-size: cover; display: flex; justify-content: center; align-items: center; flex-direction: row-reverse; height: 55vw;}
+#main-vis .main-vis-img{width:30vw;}
+#main-vis .main-vis_title dt{font-size: 6.5rem; font-weight: 900; transition: 0.5s;}
+#total {padding-top: 0;}
+#total .total_list dd{font-size: 7.0rem; letter-spacing: -3px; font-weight: 900; transition: 0.5s;}
+#total .total_list li{margin: 0 35px;}
+
+#box1{ flex-direction: row-reverse; align-items: center;}
+#box1 .box1_img{flex-basis: 50%;}
+#box1 .box1_img img{width: 100%; height: auto;}
+#box1 .box1_main{flex: .8; margin-right:auto; margin-left: auto; transition: .5s;}
+#box3 .portfolio_list > *{ display: flex; align-items: center; justify-content: center;}
+#box4 .top_tit{margin-bottom: 0;} 
+#contact{margin-left: 8%; margin-right: 8%; padding-top: 150px;}
+#contact_main{flex-basis: 45%;}
+#contact_main .top_tit{text-align: left;}
+#contact_main .contact_main_box{border-top: 1px solid #fff; padding-top: 80px; margin-top: 80px;}
+#contact_form{flex: 0.9; font-size: 1.6rem;}
+#contact_form input[type="email"],
+#contact_form input[type="text"],
+#contact_form textarea{border: none; padding:5px 3%; background-color: #fff; line-height: 1.4; width:100%; color: #333;}
+#contact_form .required{color: rgba(227,227,227,1.00); font-weight: 600;}
+#contact_form li{margin-bottom: 20px;}
+#contact_form li .error{color: #D82122;display: block; padding: 3px 0;}
+@media only screen and (min-width :1801px) {
+    #main-vis{background-position: bottom center; height: 66vw;}
+}
+@media only screen and (max-width :1551px) {
+    #main-vis .main-vis_title dt{font-size: 5.0rem;}
+    #main-vis .main-vis_title dd .txt20{font-size: 1.6rem !important;}
+    #total .total_list dd{font-size: 4.5rem;}
+}
+
+@media only screen and (max-width :1451px) {
+    #main-vis{flex-flow: column; align-items: center; justify-content:center; text-align: center;}
+    #box1 .box1_main{margin-right: 3%;}
+    #contact{display: block;}
+    #contact_main .contact_main_box{display: none;}
+    #main-vis{height: 1200px;}
+    
+}
+@media only screen and (max-width :1025px) {
+    #main-vis .main-vis-img{width: 80vw;}
+    #box1 .box1_img{margin-left: -3%;}
+}
+
+@media only screen and (max-width :769px) {
+    #main-vis{height: 80vh; background-position: top left; padding: 0 3%;}
+    #main-vis .main-vis-img img{width: 60%; height: auto;}
+}
+@media only screen and (max-width :480px) {
+    #main-vis .main-vis_title dt{font-size: 3.8rem;}
+    #total .total_list li{margin: 0 0 25px 0;}
+    #box1 .box1_main{margin-right: 0;}
+    #box1 .box1_main > p{margin-bottom: 40px !important;}
+    #box2 {overflow: hidden;}
+    #box2 .box2_img {width: 110vw; margin-left: -5vw;}
+    #box3 .top_tit {margin-bottom: 10px !important;}
+    #box3 .portfolio_list > *{width: 100%; text-align: center;}
+    #box3 .portfolio_list > * img{width: 25%;}
+    #contact{padding-top: 90px;}
+    #contact_main .top_tit .top_tit_en{font-size: 3.5rem;}
+}
+
+
+
+
+
+
+
+
+
+
+
